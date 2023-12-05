@@ -14,7 +14,7 @@ on:
 jobs:
   main:
     name: Build Binaries
-    if: github.repository == 'bigtreetech/BIGTREETECH-TouchScreenFirmware'
+    if: github.repository == 'V1EngineeringInc/BIGTREETECH-TouchScreenFirmware'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -140,7 +140,7 @@ jobs:
       - name: Push
         uses: actions-x/commit@v6
         with:
-          email: 38851044+bigtreetech@users.noreply.github.com
+          email: tft@users.noreply.github.com
           name: bigtreetech
           message: 📦️ Update prebuilt binaries and config
           token: ${{ secrets.MY_SECRET_TOKEN }}
