@@ -23,6 +23,7 @@ extern "C" {
   uint8_t LCD_Enc_ReadPos(void);            // return the position pins state
   void LCD_Enc_SendPulse(uint8_t num);      // send a pulse to the encoder
   bool LCD_Enc_CheckState(void);
+  bool LCD_Enc_IsButtonPressed(void);
   void LCD_Enc_CheckSteps(void);
   KEY_VALUES LCD_Enc_KeyValue(void);  // return a value from provided variables based on encoder position
 #endif

@@ -20,13 +20,25 @@ const char *const xyzMoveCmd[] = {X_MOVE_GCODE, Y_MOVE_GCODE, Z_MOVE_GCODE};
 static uint8_t item_moveLen_index = 1;
 AXIS nowAxis = X_AXIS;
 
+void changeAxis(const AXIS xyz)
+{
+  nowAxis = xyz;
+  GUI_SetColor(infoSettings.bg_color);
+  for (uint8_t i = X_AXIS; i <= Z_AXIS; i++) {
+    GUI_FillCircle(START_X + (OFFSET + i) * SPACE_X + (OFFSET + i) * ICON_WIDTH - BYTE_HEIGHT / 2, TITLE_END_Y / 2, BYTE_HEIGHT / 8);
+  }
+  GUI_SetColor(infoSettings.status_color);
+  GUI_FillCircle(START_X + (OFFSET + nowAxis) * SPACE_X + (OFFSET + nowAxis) * ICON_WIDTH - BYTE_HEIGHT / 2, TITLE_END_Y / 2, BYTE_HEIGHT / 8);
+  GUI_SetColor(infoSettings.font_color);
+}
+
 void storeMoveCmd(const AXIS xyz, const float amount)
 {
   // if invert is true, use 'amount' multiplied by -1
   storeCmd(xyzMoveCmd[xyz], GET_BIT(infoSettings.inverted_axis, xyz) ? -amount : amount,
            ((xyz != Z_AXIS) ? infoSettings.xy_speed[infoSettings.move_speed] : infoSettings.z_speed[infoSettings.move_speed]));
 
-  nowAxis = xyz;  // update now axis
+  changeAxis(xyz);  // update now axis
 }
 
 void drawXYZ(void)
@@ -45,7 +57,7 @@ void drawXYZ(void)
 
   sprintf(tempstr, "Z:%.2f  ", coordinateGetAxisActual(Z_AXIS));
   GUI_DispString(START_X + (OFFSET + 2) * SPACE_X + (OFFSET + 2) * ICON_WIDTH, (TITLE_END_Y - BYTE_HEIGHT) / 2, (uint8_t *)tempstr);
-
+  
   GUI_SetColor(infoSettings.font_color);
 }
 
@@ -133,6 +145,7 @@ void menuMove(void)
   moveItems.items[KEY_ICON_3] = itemMoveLen[item_moveLen_index];
 
   menuDrawPage(&moveItems);
+  changeAxis(X_AXIS);
   drawXYZ();
 
   while (MENU_IS(menuMove))
@@ -191,6 +204,9 @@ void menuMove(void)
 
         default:
           break;
+    }
+    if (LCD_Enc_IsButtonPressed()) {
+      changeAxis((nowAxis + 1) % (Z_AXIS + 1));
     }
 
     loopProcess();

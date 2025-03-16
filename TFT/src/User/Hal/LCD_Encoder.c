@@ -27,6 +27,7 @@ void LCD_Enc_SetActiveSignal(uint8_t status)
 
 static uint8_t encoderLastState = 0;
 static uint8_t encoderLastSteps = 0;
+static bool buttonLastState = false;
 volatile int8_t encoderDiff;  // updated in LCD_Enc_CheckSteps(), added to encoderPosition at every LCD update
 int8_t encoderDirection = 1;
 int16_t encoderPosition = 0;
@@ -146,6 +147,14 @@ bool LCD_Enc_CheckState()
   }
 
   return false;
+}
+
+bool LCD_Enc_IsButtonPressed()
+{
+  bool currentButtonState = LCD_Enc_ReadBtn(LCD_ENC_BUTTON_INTERVAL);
+  bool isPressed = buttonLastState && !currentButtonState;
+  buttonLastState = currentButtonState;
+  return isPressed;
 }
 
 void LCD_Enc_CheckSteps(void)
