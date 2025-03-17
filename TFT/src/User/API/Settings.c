@@ -86,7 +86,7 @@ void initSettings(void)
   infoSettings.resume_purge_len       = NOZZLE_RESUME_PURGE_LENGTH;
   infoSettings.pause_pos[X_AXIS]      = NOZZLE_PAUSE_X_POSITION;  // X
   infoSettings.pause_pos[Y_AXIS]      = NOZZLE_PAUSE_Y_POSITION;  // Y
-  infoSettings.pause_z_raise          = NOZZLE_PAUSE_Z_RAISE;
+  infoSettings.pause_z_pos            = NOZZLE_PAUSE_Z_POSITION;
 
   infoSettings.level_edge             = LEVELING_EDGE_DISTANCE;
   infoSettings.level_z_pos            = LEVELING_Z_POS;

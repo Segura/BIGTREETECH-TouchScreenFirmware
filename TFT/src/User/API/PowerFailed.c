@@ -91,11 +91,13 @@ bool powerFailedInitData(void)
   {
     uint16_t z_raised = 0;
 
-    if (infoSettings.btt_ups == 1)
+    if (infoSettings.btt_ups == 1) {
       z_raised += infoSettings.plr_z_raise;
+    }
 
-    if (infoBreakPoint.pause)
-      z_raised += infoSettings.pause_z_raise;
+    if (infoBreakPoint.pause) {
+      z_raised = infoSettings.pause_z_pos - infoBreakPoint.axis[Z_AXIS];
+    }
 
     mustStoreCacheCmd("G92 Z%.3f\n", infoBreakPoint.axis[Z_AXIS] + z_raised);  // infoCacheCmd.queue[8 - 11]
     mustStoreCacheCmd("G1 Z%.3f\n", infoBreakPoint.axis[Z_AXIS] + infoSettings.plr_z_raise);

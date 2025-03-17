@@ -14,10 +14,10 @@ extern "C" {
 // Config version support (format YYYYMMDD)
 // change if new elements/keywords are added/removed/changed in the Configuration.h
 // this number should match CONFIG_VERSION in Configuration.h
-#define CONFIG_SUPPPORT 20230821
+#define CONFIG_SUPPPORT 20250317
 
 #define FONT_FLASH_SIGN       20230821  // (YYYYMMDD) change if fonts require updating
-#define CONFIG_FLASH_SIGN     20230821  // (YYYYMMDD) change if any keyword(s) in config.ini is added or removed
+#define CONFIG_FLASH_SIGN     20250317  // (YYYYMMDD) change if any keyword(s) in config.ini is added or removed
 #define LANGUAGE_FLASH_SIGN   20230821  // (YYYYMMDD) change if any keyword(s) in language pack is added or removed
 #define ICON_FLASH_SIGN       20230821  // (YYYYMMDD) change if any icon(s) is added or removed
 
@@ -235,7 +235,7 @@ typedef struct
   float    pause_retract_len;
   float    resume_purge_len;
   float    pause_pos[AXIS_NUM - 1];  // X, Y
-  float    pause_z_raise;
+  float    pause_z_pos;
   uint16_t pause_feedrate[FEEDRATE_COUNT];  // XY, Z, E
   uint8_t  level_edge;
   float    level_z_pos;

@@ -834,8 +834,8 @@ void parseConfigKey(uint16_t index)
       if (key_seen("Y")) SET_VALID_FLOAT_VALUE(infoSettings.pause_pos[Y_AXIS], MIN_XY_POS_LIMIT, MAX_SIZE_LIMIT);
       break;
 
-    case C_INDEX_PAUSE_Z_RAISE:
-      SET_VALID_FLOAT_VALUE(infoSettings.pause_z_raise, MIN_Z_POS_LIMIT, MAX_SIZE_LIMIT);
+    case C_INDEX_PAUSE_Z_POS:
+      SET_VALID_FLOAT_VALUE(infoSettings.pause_z_pos, MIN_Z_POS_LIMIT, MAX_SIZE_LIMIT);
       break;
 
     case C_INDEX_PAUSE_FEEDRATE:

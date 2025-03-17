@@ -1,7 +1,7 @@
 #ifndef _CONFIGURATION_H_
 #define _CONFIGURATION_H_
 
-#define CONFIG_VERSION 20230821
+#define CONFIG_VERSION 20250317
 
 //====================================================================================================
 //=============================== Settings Configurable On config.ini ================================
@@ -615,8 +615,7 @@
  *   Unit: [position in mm]
  *   Value range: [min: -2000.0, max: 2000.0]
  *
- * Pause Z Raise
- * Raise Z axis by this value relative to the current layer height.
+ * Pause Z Position
  *   Unit: [distance in mm]
  *   Value range: [min: 0.0, max: 2000.0]
  *
@@ -630,7 +629,7 @@
 #define NOZZLE_RESUME_PURGE_LENGTH                16.0f  // (mm) (Default: 16.0f)
 #define NOZZLE_PAUSE_X_POSITION     (X_MIN_POS + 10.0f)  // (mm) (Default: 10.0f)
 #define NOZZLE_PAUSE_Y_POSITION     (Y_MIN_POS + 10.0f)  // (mm) (Default: 10.0f)
-#define NOZZLE_PAUSE_Z_RAISE                      10.0f  // (mm) (Default: 10.0f)
+#define NOZZLE_PAUSE_Z_POSITION                   10.0f  // (mm) (Default: 10.0f)
 #define NOZZLE_PAUSE_XY_FEEDRATE                   6000  // (mm/min) X and Y axes feedrate (Default: 6000)
 #define NOZZLE_PAUSE_Z_FEEDRATE                    6000  // (mm/min) Z axis feedrate (Default: 6000)
 #define NOZZLE_PAUSE_E_FEEDRATE                     600  // (mm/min) retract & purge feedrate (Default: 600)

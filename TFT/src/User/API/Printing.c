@@ -668,7 +668,7 @@ bool pausePrintWithMessage(bool isPause, PAUSE_TYPE pauseType, uint8_t* message)
 
           if (coordinateIsKnown())
           {
-            mustStoreCmd("G1 Z%.3f F%d\n", tmp.axis[Z_AXIS] + infoSettings.pause_z_raise, infoSettings.pause_feedrate[FEEDRATE_Z]);
+            mustStoreCmd("G1 Z%.3f F%d\n", infoSettings.pause_z_pos, infoSettings.pause_feedrate[FEEDRATE_Z]);
             mustStoreCmd("G1 X%.3f Y%.3f F%d\n", infoSettings.pause_pos[X_AXIS], infoSettings.pause_pos[Y_AXIS],
                          infoSettings.pause_feedrate[FEEDRATE_XY]);
           }

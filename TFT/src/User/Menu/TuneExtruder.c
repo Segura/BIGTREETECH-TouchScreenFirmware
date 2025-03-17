@@ -136,8 +136,7 @@ static inline void extrudeFilament(void)
   #if DELTA_PROBE_TYPE != 0
     mustStoreCmd("G0 Z200 F%d\n", infoSettings.pause_feedrate[FEEDRATE_Z]);
   #else
-    mustStoreCmd("G0 Z%.3f F%d\n", coordinateGetAxisActual(Z_AXIS) + infoSettings.pause_z_raise,
-                 infoSettings.pause_feedrate[FEEDRATE_Z]);
+    mustStoreCmd("G0 Z%.3f F%d\n", infoSettings.pause_z_pos, infoSettings.pause_feedrate[FEEDRATE_Z]);
   #endif
 
   // move to pause location
