@@ -131,6 +131,7 @@ bool startPrint(void);                                // it also sends start gco
 void endPrint(void);                                  // it also sends end gcode
 void abortPrint(void);                                // it also sends cancel gcode
 bool pausePrint(bool isPause, PAUSE_TYPE pauseType);
+bool pausePrintWithMessage(bool isPause, PAUSE_TYPE pauseType, uint8_t* message);
 
 bool isPrinting(void);                // return "true" in case a print is ongoing
 bool isPaused(void);                  // return "true" in case a print is paused

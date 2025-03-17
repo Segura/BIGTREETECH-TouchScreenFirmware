@@ -617,6 +617,11 @@ void abortPrint(void)
 
 bool pausePrint(bool isPause, PAUSE_TYPE pauseType)
 {
+  return pausePrintWithMessage(isPause, pauseType, NULL);
+}
+
+bool pausePrintWithMessage(bool isPause, PAUSE_TYPE pauseType, uint8_t* message)
+{
   // used to avoid a possible loop in case a pause gcode (e.g. M25) is present in
   // the queue infoCmd and the function loopProcess() is invoked by this function
   static bool loopDetected = false;
@@ -642,7 +647,11 @@ bool pausePrint(bool isPause, PAUSE_TYPE pauseType)
       {
         if (pauseType == PAUSE_M0)
         {
-          popupReminder(DIALOG_TYPE_ALERT, LABEL_PAUSE, LABEL_PAUSE);
+          if (message != NULL) {
+            popupReminder(DIALOG_TYPE_ALERT, LABEL_PAUSE, message);
+          } else {
+            popupReminder(DIALOG_TYPE_ALERT, LABEL_PAUSE, LABEL_PAUSE);
+          }
         }
         else if (pauseType == PAUSE_NORMAL)  // send command only for pause originated from TFT
         {

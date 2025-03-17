@@ -614,7 +614,10 @@ void sendQueueCmd(void)
             if (infoFile.source < FS_ONBOARD_MEDIA)
             {
               sendCmd(true, avoid_terminal);
-              pausePrint(true, PAUSE_M0);
+
+              char* messageStart = strchr(cmd_ptr, ' ') + 1;
+
+              pausePrintWithMessage(true, PAUSE_M0, (uint8_t *) messageStart);
               return;
             }
           }
