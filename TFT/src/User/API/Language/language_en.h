@@ -40,8 +40,8 @@
     #define STRING_LED_ALWAYS_ON          "LED always ON"
     #define STRING_KNOB_LED_COLOR         "Rotary Knob LED"
     #define STRING_KNOB_LED_IDLE          "Rotary Knob LED idle"
-    #define STRING_START_GCODE_ENABLED    "Start Gcode before print"
-    #define STRING_END_GCODE_ENABLED      "End Gcode after print"
+    #define STRING_START_GCODE_ENABLED    "Start Gcode before mill"
+    #define STRING_END_GCODE_ENABLED      "End Gcode after mill"
     #define STRING_CANCEL_GCODE_ENABLED   "Cancel Gcode"
 
     // Machine Parameter Settings - Param Title (ordered by gcode)
@@ -73,7 +73,7 @@
     #define STRING_MBL_OFFSET             "MBL Offset"
 
     // Machine Parameter Settings - Param Attributes (ordered by gcode)
-    #define STRING_PRINT_ACCELERATION     "Print Acceleration"
+    #define STRING_PRINT_ACCELERATION     "Mill Acceleration"
     #define STRING_RETRACT_ACCELERATION   "Retract Acceleration"
     #define STRING_TRAVEL_ACCELERATION    "Travel Acceleration"
     #define STRING_RETRACT_LENGTH         "Retract length"
@@ -89,9 +89,9 @@
     #define STRING_SAVE                   "Save"
     #define STRING_RESTORE                "Restore"
     #define STRING_RESET                  "Reset"
-    #define STRING_EEPROM_SAVE_INFO       "Save printer settings to EEPROM?"
+    #define STRING_EEPROM_SAVE_INFO       "Save CNC settings to EEPROM?"
     #define STRING_EEPROM_RESTORE_INFO    "Reload settings from EEPROM?"
-    #define STRING_EEPROM_RESET_INFO      "Reset EEPROM to stock printer settings?"
+    #define STRING_EEPROM_RESET_INFO      "Reset EEPROM to stock CNC settings?"
     #define STRING_SETTINGS_SAVE          "Save settings"
     #define STRING_SETTINGS_RESTORE       "Restore settings"
     #define STRING_SETTINGS_RESET         "Reset default settings"
@@ -151,17 +151,17 @@
     #define STRING_READY                  "Ready"
     #define STRING_BUSY                   "Busy processing, please wait..."
     #define STRING_LOADING                "Loading..."
-    #define STRING_UNCONNECTED            "No printer attached!"
+    #define STRING_UNCONNECTED            "No CNC attached!"
     #define STRING_LISTENING              "TFT in Listening Mode!"
 
     // Process Info
     #define STRING_INFO                   "Info"  // Info Sign
     #define STRING_INVALID_VALUE          "Invalid value(s)"
     #define STRING_TIMEOUT_REACHED        "Timeout reached!"
-    #define STRING_DISCONNECT_INFO        "Now you can control the printer by your computer!"
+    #define STRING_DISCONNECT_INFO        "Now you can control the CNC by your computer!"
     #define STRING_SHUTTING_DOWN          "Shutting down..."
     #define STRING_WAIT_TEMP_SHUT_DOWN    "Wait for the hotend temperature to be lower than %d℃"
-    #define STRING_POWER_FAILED           "Continue printing?"  // Question Sign
+    #define STRING_POWER_FAILED           "Continue milling?"  // Question Sign
     #define STRING_PROCESS_COMPLETED      "Process completed!"
     #define STRING_PROCESS_ABORTED        "Process aborted!"
 
@@ -185,9 +185,9 @@
     #define STRING_DISABLE_STEPPERS       "Disarm All"
     #define STRING_XY_UNLOCK              "Disarm XY"
 
-    #define STRING_START_PRINT            "Start printing:\n%s?"
-    #define STRING_STOP_PRINT             "Stop printing?"
-    #define STRING_IS_PAUSE               "Action not allowed while printing.\n\nPause printing?"
+    #define STRING_START_PRINT            "Start milling:\n%s?"
+    #define STRING_STOP_PRINT             "Stop milling?"
+    #define STRING_IS_PAUSE               "Action not allowed while milling.\n\nPause milling?"
     #define STRING_M0_PAUSE               "Paused by M0 command"
 
     #define STRING_TEST                   "Test"
@@ -255,7 +255,7 @@
     #define STRING_HEAT                   "Heat"
     #define STRING_MOVE                   "Move"
     #define STRING_HOME                   "Home"
-    #define STRING_PRINT                  "Print"
+    #define STRING_PRINT                  "Mill"
     #define STRING_EXTRUDE                "Extrude"
     #define STRING_SETTINGS               "Settings"
     #define STRING_SCREEN_SETTINGS        "Screen"
@@ -356,10 +356,10 @@
     #define STRING_LOAD_STARTED           "Loading filament.\nPlease wait for the process to complete."
     #define STRING_UNLOAD_STARTED         "Unloading filament.\nPlease wait for the process to complete."
     #define STRING_HEATERS_ON             "Some heaters are still ON.\nDo you want to stop them?"
-    #define STRING_PRINT_FINISHED         "Print finished"
+    #define STRING_PRINT_FINISHED         "Mill finished"
     #define STRING_MAIN_SCREEN            "Main"
     #define STRING_PREVIOUS_PRINT_DATA    "Brief"
-    #define STRING_PRINT_TIME             "Print Time: %02u:%02u:%02u"
+    #define STRING_PRINT_TIME             "Mill Time: %02u:%02u:%02u"
     #define STRING_FILAMENT_LENGTH        "\nFilament length: %1.2fm"
     #define STRING_FILAMENT_WEIGHT        "\nFilament weight: %1.2fg"
     #define STRING_FILAMENT_COST          "\nFilament cost: %1.2f"

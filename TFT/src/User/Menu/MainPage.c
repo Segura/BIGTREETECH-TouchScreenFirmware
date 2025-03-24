@@ -29,7 +29,7 @@ void menuMain(void)
 
   if (infoSettings.status_screen != 1)
   {
-    mainPageItems.items[7].icon = ICON_PRINT;
+    mainPageItems.items[7].icon = ICON_SPINDLE;
     mainPageItems.items[7].label.index = LABEL_PRINT;
   }
 

@@ -19,7 +19,7 @@ extern "C" {
 #define FONT_FLASH_SIGN       20230821  // (YYYYMMDD) change if fonts require updating
 #define CONFIG_FLASH_SIGN     20250317  // (YYYYMMDD) change if any keyword(s) in config.ini is added or removed
 #define LANGUAGE_FLASH_SIGN   20230821  // (YYYYMMDD) change if any keyword(s) in language pack is added or removed
-#define ICON_FLASH_SIGN       20230821  // (YYYYMMDD) change if any icon(s) is added or removed
+#define ICON_FLASH_SIGN       20250324  // (YYYYMMDD) change if any icon(s) is added or removed
 
 #define FONT_CHECK_SIGN       (FONT_FLASH_SIGN + WORD_UNICODE_ADDR + FLASH_SIGN_ADDR)
 #define CONFIG_CHECK_SIGN     (CONFIG_FLASH_SIGN + STRINGS_STORE_ADDR + \
